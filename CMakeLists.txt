@@ -20,17 +20,17 @@ add_executable(async-test src/test.cpp)
 set_target_properties(async PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
-        COMPILE_OPTIONS "-Wpedantic -Wall -Wextra")
+        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
 
 set_target_properties(async-test PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
-        COMPILE_OPTIONS "-Wpedantic -Wall -Wextra")
+        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
 
 set_target_properties(async-load-test PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
-        COMPILE_OPTIONS "-Wpedantic -Wall -Wextra")
+        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
 
 if (WITH_SANITIZE_ADDRESS)
     set_target_properties(async-load-test PROPERTIES COMPILE_OPTIONS "-fsanitize=address")
