@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <cstring>
+#include <functional>
 #include "utils.h"
 #include "bulk.h"
 

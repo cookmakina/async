@@ -20,17 +20,17 @@ add_executable(async-test src/test.cpp)
 set_target_properties(async PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
-        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
+        COMPILE_OPTIONS "-Wpedantic -Wall -Wextra")
 
 set_target_properties(async-test PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
-        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
+        COMPILE_OPTIONS "-Wpedantic -Wall -Wextra")
 
 set_target_properties(async-load-test PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
-        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
+        COMPILE_OPTIONS "-Wpedantic -Wall -Wextra")
 
 if (WITH_SANITIZE_ADDRESS)
     set_target_properties(async-load-test PROPERTIES COMPILE_OPTIONS "-fsanitize=address")
@@ -45,8 +45,8 @@ if (WITH_SANITIZE_THREAD)
 endif()
 
 include_directories(${GTEST_INCLUDE_DIRS})
-target_link_libraries(async-test async  ${GTEST_LIBRARIES})
-target_link_libraries(async-load-test async  ${GTEST_LIBRARIES})
+target_link_libraries(async-test async ${GTEST_LIBRARIES})
+target_link_libraries(async-load-test async ${GTEST_LIBRARIES})
 
 install(TARGETS async-load-test RUNTIME DESTINATION bin)
 install(TARGETS async-test RUNTIME DESTINATION bin)
