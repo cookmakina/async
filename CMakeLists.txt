@@ -17,7 +17,17 @@ target_link_libraries(async PUBLIC pthread)
 add_executable(async-load-test src/load-test.cpp)
 add_executable(async-test src/test.cpp)
 
-set_target_properties(async-test async-load-test PROPERTIES
+set_target_properties(async PROPERTIES
+        CXX_STANDARD 14
+        CXX_STANDARD_REQUIRED ON
+        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
+
+set_target_properties(async-test PROPERTIES
+        CXX_STANDARD 14
+        CXX_STANDARD_REQUIRED ON
+        COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
+
+set_target_properties(async-load-test PROPERTIES
         CXX_STANDARD 14
         CXX_STANDARD_REQUIRED ON
         COMPILE_OPTIONS -Wpedantic -Wall -Wextra)
